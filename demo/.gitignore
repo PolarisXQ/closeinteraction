@@ -1,0 +1,7 @@
+pretrained
+mocapdata/
+pingpong*
+test*
+*.png
+*.jpg
+*.obj
