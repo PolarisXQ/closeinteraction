@@ -19,7 +19,6 @@ import torch.optim as optim
 from utils.renderer_pyrd import Renderer
 
 from model.interhuman_diffusion import interhuman_diffusion
-from model.interhuman_diffusion_j3d import interhuman_diffusion_j3d
 from model.joints_prior import joints_prior
 import scipy.ndimage.filters as filters
 

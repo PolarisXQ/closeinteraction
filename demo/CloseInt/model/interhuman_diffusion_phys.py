@@ -18,7 +18,6 @@ from einops import rearrange, repeat
 import torch.optim as optim
 
 from CloseInt.model.interhuman_diffusion import interhuman_diffusion
-from CloseInt.model.interhuman_diffusion_j3d import interhuman_diffusion_j3d
 from CloseInt.model.joints_prior import joints_prior
 import scipy.ndimage.filters as filters
 
@@ -1773,9 +1772,6 @@ class interhuman_diffusion_phys(interhuman_diffusion):
 
         features = torch.cat([h_a[:,:,None], h_b[:,:,None]], dim=2)
         features = features.reshape(-1, self.latent_dim)
-        
-        print("features.shape:", features.shape)
-        print("img_info['bbox_info'].shape:", img_info['bbox_info'].shape)
 
         xc = torch.cat([features, img_info['bbox_info']], 1)    
         

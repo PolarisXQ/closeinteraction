@@ -80,7 +80,7 @@ class Renderer(object):
         # make the centroid at the image center (the X and Y coordinates are zeros)
         centroid[:2] = 0
         # print("centroid side: ", centroid)
-        centroid = [0, 0, 2.6]
+        # centroid = [0, 0, 2.6]
         aroundy = cv2.Rodrigues(np.array([0, np.radians(90.), 0]))[0][np.newaxis, ...]  # 1*3*3
         pred_vert_arr_side = np.matmul((verts - centroid), aroundy) + centroid
         side_view = self.render_front_view(pred_vert_arr_side)
@@ -114,7 +114,7 @@ class Renderer(object):
         centroid = verts.mean(axis=(0, 1))
         centroid[:2] = 0
         # print("centroid top: ", centroid)
-        centroid = [0, 0, 2.6]
+        # centroid = [0, 0, 2.6]
         aroundx = cv2.Rodrigues(np.array([np.radians(-90.), 0, 0]))[0][np.newaxis, ...]
         pred_vert_arr_top = np.matmul((verts - centroid), aroundx) + centroid
         top_view = self.render_front_view(pred_vert_arr_top)
